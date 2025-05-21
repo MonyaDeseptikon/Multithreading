@@ -1,7 +1,7 @@
 
 import java.util.concurrent.locks.ReentrantLock;
 
-public class Program {
+public class Lock {
     static Integer res = Integer.valueOf(0);
 
     public static void main(String[] args) {
@@ -25,9 +25,9 @@ public class Program {
 
         public void run() {
 
-
+            locker.lock(); // устанавливаем блокировку
             try {
-                locker.lock(); // устанавливаем блокировку
+
                 for (int i = 1; i < 5; i++) {
 
                     System.out.printf("%s %d \n", Thread.currentThread().getName(), res);
